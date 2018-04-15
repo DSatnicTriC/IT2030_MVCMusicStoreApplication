@@ -19,18 +19,25 @@ namespace MVCMusicStoreApplication.Controllers
             return View(genres);
         }
 
-        // GET: 
-        public ActionResult Index()
+        // GET: Store/Index/5
+        public ActionResult Index(int id)
         {
-            //return View();
-            return null;
+            var albums = db.Albums.Where(x => x.GenreId == id).OrderBy(x => x.Title).ToList();
+            return View(albums);
         }
 
-        // GET: 
-        public ActionResult Details()
+        // GET: Store/Details/5
+        public ActionResult Details(int id)
         {
-            //return View();
-            return null;
+            var album = db.Albums.Include(x => x.Artist).First(x => x.AlbumId == id);
+            return View(album);
+        }
+
+        // GET: Store/AddToCart/5
+        // Note: this will be moved to a ShoppingCart Controller
+        public ActionResult AddToCart(int id)
+        {
+            return Content("Added To Cart Album id " + id);
         }
     }
 }

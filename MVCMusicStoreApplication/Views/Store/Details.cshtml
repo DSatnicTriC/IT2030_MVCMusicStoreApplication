@@ -1,0 +1,21 @@
+﻿@model MVCMusicStoreApplication.Models.Album
+@{
+    ViewBag.Title = "Album Details";
+    Layout = "~/Views/Shared/_LayoutStore.cshtml";
+}
+
+<h2>Details</h2>
+
+<h2>@Model.Title</h2>
+<img src="~/Images/smpleCover.png" width="100" style="padding-left: 25px;"/>
+<br/><br/>
+<em>Artist: </em><strong>@Model.Artist.Name</strong>
+<br/>
+<em>Price: </em><strong>@Model.Price</strong>
+<br/><br/>
+     <form action=@Url.Action("AddToCart")>
+         <input type="hidden" name="id" value="@Model.AlbumId"/>
+         <button type="submit" class="btn">
+             Add to Cart
+         </button>
+     </form>
