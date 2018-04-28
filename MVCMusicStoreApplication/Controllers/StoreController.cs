@@ -32,12 +32,5 @@ namespace MVCMusicStoreApplication.Controllers
             var album = db.Albums.Include(x => x.Artist).First(x => x.AlbumId == id);
             return View(album);
         }
-
-        // GET: Store/AddToCart/5
-        // Note: this will be moved to a ShoppingCart Controller
-        public ActionResult AddToCart(int id)
-        {
-            return Content("Added To Cart Album id " + id);
-        }
     }
 }

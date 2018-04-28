@@ -13,7 +13,7 @@
 <br/>
 <em>Price: </em><strong>@Model.Price</strong>
 <br/><br/>
-     <form action=@Url.Action("AddToCart")>
+     <form action=@Url.Action("AddToCart", "ShoppingCart")>
          <input type="hidden" name="id" value="@Model.AlbumId"/>
          <button type="submit" class="btn">
              Add to Cart
