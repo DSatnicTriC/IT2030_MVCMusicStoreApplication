@@ -1,0 +1,30 @@
+﻿@model MVCMusicStoreApplication.Models.ViewModels.ShoppingCartViewModel
+@{
+    ViewBag.Title = "Here's your shopping cart!";
+}
+
+<div>
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th></th>
+        </tr>
+        <tr>
+            @foreach (var item in Model.CartItems)
+            {
+                <td>@item.AlbumSelected.Title</td>
+                <td>@item.AlbumSelected.Price</td>
+                <td>@item.Count</td>
+                <td><a href="#">Remove</a></td>
+            }
+        </tr>
+        <tr>
+            <td>Cart Total:</td>
+            <td></td>
+            <td></td>
+            <td>@Model.CartTotal</td>
+        </tr>
+    </table>
+</div>

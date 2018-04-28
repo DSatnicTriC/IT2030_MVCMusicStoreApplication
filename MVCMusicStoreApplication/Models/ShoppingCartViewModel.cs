@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace MVCMusicStoreApplication.Models
+namespace MVCMusicStoreApplication.Models.ViewModels
 {
     public class ShoppingCartViewModel
     {
