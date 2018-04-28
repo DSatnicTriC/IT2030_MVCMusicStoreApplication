@@ -174,6 +174,9 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\cds.png" />
+    <Content Include="Images\home-showcase.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\placeholder.gif" />
     <Content Include="Images\smpleCover.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
