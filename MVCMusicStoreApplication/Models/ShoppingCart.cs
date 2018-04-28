@@ -66,6 +66,8 @@ namespace MVCMusicStoreApplication.Models
                     Count = 1,
                     DateCreated = DateTime.Now
                 };
+
+                db.Carts.Add(cartItem);
             }
             else
             {
