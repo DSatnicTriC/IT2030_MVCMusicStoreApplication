@@ -11,15 +11,17 @@
             <th>Quantity</th>
             <th></th>
         </tr>
-        <tr>
-            @foreach (var item in Model.CartItems)
-            {
+
+        @foreach (var item in Model.CartItems)
+        {
+            <tr>
                 <td>@item.AlbumSelected.Title</td>
                 <td>@item.AlbumSelected.Price</td>
                 <td>@item.Count</td>
                 <td><a href="#">Remove</a></td>
-            }
-        </tr>
+            </tr>
+        }
+
         <tr>
             <td>Cart Total:</td>
             <td></td>
