@@ -1,8 +1,15 @@
 ﻿@model MVCMusicStoreApplication.Models.ViewModels.ShoppingCartViewModel
 @{
-    ViewBag.Title = "Here's your shopping cart!";
+    ViewBag.Title = "ShoppingCart";
+}
+@section Scripts
+{
+    <script src="~/Scripts/Apps/MusicStoreScript.js"></script>
 }
 
+<h2>Here's your shopping cart</h2>
+<br/>
+<div id="update-message"></div>
 <div>
     <table>
         <tr>
@@ -14,11 +21,11 @@
 
         @foreach (var item in Model.CartItems)
         {
-            <tr>
+            <tr id="record-@item.RecordId">
                 <td>@item.AlbumSelected.Title</td>
                 <td>@item.AlbumSelected.Price</td>
-                <td>@item.Count</td>
-                <td><a href="#">Remove</a></td>
+                <td id="item-count-@item.RecordId">@item.Count</td>
+                <td><a href="#" class="RemoveLink" data-id="@item.RecordId">Remove</a></td>
             </tr>
         }
 
@@ -30,3 +37,6 @@
         </tr>
     </table>
 </div>
+<p class="button">
+    @Html.ActionLink("Back to Browse", "Browse", "Store")
+</p>
